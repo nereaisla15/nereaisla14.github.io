@@ -144,17 +144,16 @@
         }
 
         .writeup-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
+            display: block;
             margin-top: 20px;
         }
 
         .writeup-group {
-            border: 1px solid #EAE5E0;
-            border-radius: 16px;
-            padding: 18px;
-            background: #FFFDFB;
+            margin-bottom: 25px;
+            padding: 0;
+            background: transparent;
+            border: none;
+            border-radius: 0;
         }
 
         .writeup-group h3 {
@@ -167,10 +166,13 @@
 
         .writeup-list {
             list-style: none;
-            display: grid;
-            gap: 10px;
+            display: block;
             padding: 0;
             margin: 0;
+        }
+
+        .writeup-list li {
+            padding: 8px 0;
         }
 
         .writeup-card {
@@ -325,10 +327,6 @@
             .project-date {
                 margin-bottom: 6px;
             }
-
-            .writeup-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -338,7 +336,7 @@
             <a href="#inicio" class="logo">N. C. Ramos</a>
             <div class="nav-links">
                 <a href="#sobre-mi">Sobre Mí</a>
-                <a href="#proyectos">Proyectos</a>
+                <a href="#write-ups">Write-ups</a>
                 <a href="#experiencia">Experiencia</a>
                 <a href="#formacion">Formación</a>
             </div>
@@ -356,21 +354,17 @@
             </div>
         </section>
 
-        <section id="proyectos">
+        <section id="write-ups">
             <h2>Write-ups</h2>
-            <p class="projects-intro">Accede al README exacto de cada máquina en GitHub. Los enlaces están organizados por Linux y Windows para facilitar la navegación.</p>
-
-            <div class="writeup-grid">
-                <div class="writeup-group">
-                    <h3>Máquinas Linux</h3>
-                    <ul id="linux-writeups" class="writeup-list"></ul>
-                </div>
-
-                <div class="writeup-group">
-                    <h3>Máquinas Windows</h3>
-                    <ul id="windows-writeups" class="writeup-list"></ul>
-                </div>
+            <div class="text-block">
+                <p>Accede al README exacto de cada máquina en GitHub.</p>
             </div>
+
+            <div class="section-subtitle">Máquinas Linux</div>
+            <ul id="linux-writeups" class="bullet-list" style="margin-bottom:30px;"></ul>
+
+            <div class="section-subtitle">Máquinas Windows</div>
+            <ul id="windows-writeups" class="bullet-list"></ul>
 
             <div class="text-block" style="margin-top:18px; font-size:13px; color:#8C827A;">
                 <p>Repositorios base: <a href="https://github.com/IES-Rafael-Alberti/Write-up-Nerea" target="_blank">Write-up-Nerea</a> · <a href="https://github.com/IES-Rafael-Alberti/ctfd-challenges" target="_blank">ctfd-challenges</a></p>
@@ -382,6 +376,10 @@
             <div class="text-block">
                 Soy Nerea Candón Ramos, especialista en Ciberseguridad y Desarrollo de Software con formación técnica en Desarrollo de Aplicaciones Multiplataforma. Durante mi carrera profesional he adquirido los conocimientos necesarios para afrontar cualquier proyecto software, combinando desarrollo web responsive, análisis de datos y experiencia en seguridad informática. Me interesa continuar mis estudios en Ingeniería Informática, priorizando el aprendizaje práctico y la mejora continua en entornos colaborativos.
             </div>
+        </section>
+
+        <section id="proyectos" style="display:none;">
+            <h2>Proyectos</h2>
         </section>
 
         <section id="experiencia">
