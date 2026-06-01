@@ -3,45 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- MODIFICA AQUÍ: Tu Nombre -->
+    <!-- CAMBIA AQUÍ: Tu Nombre -->
     <title>Tu Nombre — Porfolio Profesional</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth; /* Para que al pulsar el menú baje con suavidad */
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background-color: #FCFBF9; /* Fondo crema muy suave, cálido y elegante */
-            color: #2C2A29; /* Texto carbón suave, menos agresivo que el negro */
+            background-color: #FCFBF9; /* Fondo crema suave, cálido y elegante */
+            color: #2C2A29; /* Texto carbón suave */
             line-height: 1.6;
-            padding: 60px 20px;
         }
 
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-        }
-
-        /* Cabecera */
+        /* MENÚ DE NAVEGACIÓN (Estilo Abel, pero en tu paleta elegante) */
         header {
-            margin-bottom: 60px;
-            text-align: center; /* Centrado sutil para dar aire de marca personal */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(252, 251, 249, 0.95); /* Fondo crema con transparencia */
+            backdrop-filter: blur(8px); /* Efecto cristalino moderno */
+            border-bottom: 1px solid #EAE5E0;
+            z-index: 1000;
         }
 
-        h1 {
-            font-family: "Playfair Display", "Didot", "Georgia", serif; /* Fuente elegante con serifa */
-            font-size: 32px;
-            font-weight: 400;
+        nav {
+            max-width: 750px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-family: "Playfair Display", "Georgia", serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            font-style: italic;
+            color: #1A1919;
+            text-decoration: none;
             letter-spacing: 1px;
-            margin-bottom: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #59524C;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #C49A83; /* Tono rosa viejo al pasar el cursor */
+        }
+
+        /* CONTENEDOR PRINCIPAL (Con margen superior para no taparse con el menú) */
+        main {
+            max-width: 700px;
+            margin: 120px auto 0 auto;
+            padding: 0 20px;
+        }
+
+        /* SECCIONES (Cada una con padding para que el menú no tape el título) */
+        section {
+            padding-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* PRESENTACIÓN */
+        .intro-title {
+            font-family: "Playfair Display", "Didot", "Georgia", serif;
+            font-size: 36px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
             color: #1A1919;
         }
 
         .subtitle {
-            color: #8C827A; /* Tono taupe/tierra suave */
+            color: #8C827A;
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -51,31 +104,27 @@
         .links-bio {
             font-size: 14px;
             display: flex;
-            justify-content: center;
             gap: 20px;
+            margin-top: 15px;
         }
 
         .links-bio a {
             color: #2C2A29;
             text-decoration: none;
-            border-bottom: 1px solid #D9C3B0; /* Línea inferior fina color oro suave */
+            border-bottom: 1px solid #D9C3B0;
             padding-bottom: 2px;
             transition: all 0.3s ease;
         }
 
         .links-bio a:hover {
-            color: #C49A83; /* Rosa viejo / Oro rosa al pasar el cursor */
+            color: #C49A83;
             border-bottom-color: #C49A83;
         }
 
-        /* Secciones */
-        section {
-            margin-bottom: 50px;
-        }
-
+        /* ENCABEZADOS DE SECCIÓN */
         h2 {
             font-family: "Playfair Display", "Georgia", serif;
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 400;
             font-style: italic;
             border-bottom: 1px solid #EAE5E0;
@@ -90,10 +139,10 @@
             text-align: justify;
         }
 
-        /* Lista de Proyectos Elegante */
+        /* LISTA DE PROYECTOS (Formato Abel en versión premium) */
         .project-row {
             display: flex;
-            padding: 20px 16px;
+            padding: 18px 16px;
             border-bottom: 1px solid #EAE5E0;
             text-decoration: none;
             color: inherit;
@@ -102,17 +151,17 @@
         }
 
         .project-row:hover {
-            background-color: #F5F1EC; /* Fondo sutil al posarse sobre el proyecto */
-            transform: translateX(4px); /* Desplazamiento delicado hacia la derecha */
+            background-color: #F5F1EC;
+            transform: translateX(4px);
         }
 
         .project-date {
-            width: 70px;
-            min-width: 70px;
+            width: 80px;
+            min-width: 80px;
             font-size: 13px;
             color: #A69C94;
             font-weight: 300;
-            padding-top: 2px;
+            padding-top: 3px;
         }
 
         .project-content {
@@ -123,17 +172,17 @@
             font-size: 16px;
             font-weight: 500;
             color: #1A1919;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .project-desc {
             font-size: 14px;
             color: #615B55;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 300;
         }
 
-        /* Etiquetas de Tecnologías Estilizadas */
+        /* ETIQUETAS DE TECNOLOGÍA */
         .tags {
             display: flex;
             flex-wrap: wrap;
@@ -142,15 +191,14 @@
 
         .tag {
             font-size: 11px;
-            background-color: #EFEAE4; /* Botón nude/crema */
+            background-color: #EFEAE4; /* Nude suave */
             color: #73675C;
-            padding: 3px 10px;
-            border-radius: 20px; /* Completamente redondeado, más orgánico y suave */
-            font-size: 11px;
+            padding: 2px 10px;
+            border-radius: 20px; /* Redondeado orgánico */
             letter-spacing: 0.5px;
         }
 
-        /* Educación / Certificados */
+        /* EDUCACIÓN */
         .edu-item {
             padding: 15px 16px;
             border-left: 2px solid #E3D9D0;
@@ -176,10 +224,22 @@
             text-align: center;
             color: #B3A8A0;
             letter-spacing: 1px;
+            padding-bottom: 40px;
         }
 
-        /* Pantallas móviles */
-        @media (max-width: 500px) {
+        /* ADAPTACIÓN PARA MÓVILES (Oculta el menú si la pantalla es muy pequeña) */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 1rem;
+            }
+            .nav-links {
+                gap: 15px;
+            }
+            main {
+                margin-top: 160px;
+            }
             .project-row {
                 flex-direction: column;
                 padding: 15px 8px;
@@ -187,50 +247,60 @@
             .project-date {
                 margin-bottom: 6px;
             }
-            header {
-                text-align: left;
-            }
-            .links-bio {
-                justify-content: flex-start;
-            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <!-- MENÚ DE NAVEGACIÓN SUPERIOR (Fijo estilo Abel) -->
+    <header>
+        <nav>
+            <!-- CAMBIA AQUÍ: Tus Iniciales o Inicial + Apellido -->
+            <a href="#inicio" class="logo">T. Nombre</a>
+            <div class="nav-links">
+                <a href="#sobre-mi">Sobre Mí</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#formacion">Formación</a>
+            </div>
+        </nav>
+    </header>
 
-        <!-- CABECERA DE MARCA PERSONAL -->
-        <header>
-            <!-- MODIFICA AQUÍ: Tu Nombre -->
-            <h1>Tu Nombre Completo</h1>
+    <main>
+
+        <!-- SECCIÓN DE INICIO / PRESENTACIÓN -->
+        <section id="inicio">
+            <!-- CAMBIA AQUÍ: Tu Nombre Real -->
+            <h1 class="intro-title">Tu Nombre Completo</h1>
             <p class="subtitle">Desarrolladora & Diseñadora de Software</p>
+            
             <div class="links-bio">
-                <!-- MODIFICA AQUÍ: Tus enlaces reales -->
+                <!-- CAMBIA AQUÍ: Tus enlaces a redes -->
                 <a href="https://github.com/tu-usuario" target="_blank">GitHub</a>
                 <a href="https://linkedin.com/in/tu-usuario" target="_blank">LinkedIn</a>
                 <a href="mailto:tu-correo@email.com">Email</a>
             </div>
-        </header>
+        </section>
 
-        <!-- SOBRE MÍ -->
-        <section>
+        <!-- SECCIÓN SOBRE MÍ -->
+        <section id="sobre-mi">
             <h2>Sobre Mí</h2>
             <div class="text-block">
-                Hola, soy [Tu Nombre]. Desarrollo soluciones digitales combinando lógica, orden y una visión estética cuidada. Me especializo en [tu especialidad, ej: crear aplicaciones web intuitivas y organizar arquitecturas de código limpias].
+                <!-- CAMBIA AQUÍ: Tu texto de presentación -->
+                Hola, soy Tu Nombre. Desarrollo soluciones digitales combinando lógica, orden y una visión estética muy cuidada. Me especializo en diseñar y programar interfaces web altamente intuitivas, asegurando arquitecturas de código limpias, escalables y eficientes.
             </div>
         </section>
 
-        <!-- PROYECTOS DESTACADOS -->
-        <section>
+        <!-- SECCIÓN PROYECTOS (Estructura de tabla interactiva estilo Abel) -->
+        <section id="proyectos">
             <h2>Proyectos Seleccionados</h2>
 
             <!-- PROYECTO 1 -->
+            <!-- CAMBIA AQUÍ: El enlace de tu repositorio real -->
             <a href="https://github.com/tu-usuario/proyecto-1" class="project-row" target="_blank">
                 <div class="project-date">2026</div>
                 <div class="project-content">
-                    <div class="project-title">Nombre de tu Proyecto Principal</div>
-                    <div class="project-desc">Una descripción delicada y precisa de lo que resuelve este código. Enfocado en los resultados y la tecnología empleada.</div>
+                    <div class="project-title">E-Commerce & Plataforma Visual Exclusiva</div>
+                    <div class="project-desc">Una interfaz interactiva, rápida y responsive diseñada desde cero. Centrada en una experiencia de usuario premium con transiciones fluidas.</div>
                     <div class="tags">
                         <span class="tag">React</span>
                         <span class="tag">Node.js</span>
@@ -240,32 +310,34 @@
             </a>
 
             <!-- PROYECTO 2 -->
+            <!-- CAMBIA AQUÍ: El enlace de tu repositorio real -->
             <a href="https://github.com/tu-usuario/proyecto-2" class="project-row" target="_blank">
                 <div class="project-date">2025</div>
                 <div class="project-content">
-                    <div class="project-title">Desarrollo de API & Automatización</div>
-                    <div class="project-desc">Scripting inteligente para optimizar bases de datos y consumo de servicios externos de forma limpia.</div>
+                    <div class="project-title">Desarrollo de API & Automatización Inteligente</div>
+                    <div class="project-desc">Scripting optimizado para la gestión y limpieza de bases de datos relacionales, agilizando el consumo de servicios en la nube.</div>
                     <div class="tags">
                         <span class="tag">Python</span>
                         <span class="tag">SQL</span>
+                        <span class="tag">Cloud</span>
                     </div>
                 </div>
             </a>
 
         </section>
 
-        <!-- EDUCACIÓN Y RECONOCIMIENTOS -->
-        <section>
+        <!-- SECCIÓN FORMACIÓN -->
+        <section id="formacion">
             <h2>Formación & Certificaciones</h2>
             
             <div class="edu-item">
-                <div class="edu-title">Ingeniería de Software / Grado Web</div>
+                <div class="edu-title">Ingeniería de Software / Grado en Desarrollo Web</div>
                 <div class="edu-meta">Universidad o Escuela de Tecnología · 2025</div>
             </div>
 
             <div class="edu-item">
-                <div class="edu-title">Certificación Oficial Cloud / Frontend</div>
-                <div class="edu-meta">Institución Emisora · 2024</div>
+                <div class="edu-title">Certificación Oficial Cloud / Especialización Frontend</div>
+                <div class="edu-meta">Institución Emisora del Título · 2024</div>
             </div>
         </section>
 
@@ -274,7 +346,7 @@
             <p>&copy; 2026 — Diseñado con elegancia a través de GitHub Pages</p>
         </footer>
 
-    </div>
+    </main>
 
 </body>
 </html>
