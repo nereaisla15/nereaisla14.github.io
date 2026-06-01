@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CAMBIA AQUÍ: Tu Nombre -->
     <title>Nerea Candón Ramos — Portafolio Profesional</title>
     <style>
         html {
@@ -18,19 +17,18 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background-color: #FCFBF9; /* Fondo crema suave, cálido y elegante */
-            color: #2C2A29; /* Texto carbón suave */
+            background-color: #FCFBF9;
+            color: #2C2A29;
             line-height: 1.6;
         }
 
-        /* MENÚ DE NAVEGACIÓN (Estilo Abel, pero en tu paleta elegante) */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(252, 251, 249, 0.95); /* Fondo crema con transparencia */
-            backdrop-filter: blur(8px); /* Efecto cristalino moderno */
+            background: rgba(252, 251, 249, 0.95);
+            backdrop-filter: blur(8px);
             border-bottom: 1px solid #EAE5E0;
             z-index: 1000;
         }
@@ -70,24 +68,21 @@
         }
 
         .nav-links a:hover {
-            color: #C49A83; /* Tono rosa viejo al pasar el cursor */
+            color: #C49A83;
         }
 
-        /* CONTENEDOR PRINCIPAL (Con margen superior para no taparse con el menú) */
         main {
             max-width: 700px;
             margin: 120px auto 0 auto;
             padding: 0 20px;
         }
 
-        /* SECCIONES (Cada una con padding para que el menú no tape el título) */
         section {
             padding-top: 40px;
             margin-bottom: 60px;
             scroll-margin-top: 110px;
         }
 
-        /* PRESENTACIÓN */
         .intro-title {
             font-family: "Playfair Display", "Didot", "Georgia", serif;
             font-size: 36px;
@@ -125,7 +120,6 @@
             border-bottom-color: #C49A83;
         }
 
-        /* ENCABEZADOS DE SECCIÓN */
         h2 {
             font-family: "Playfair Display", "Georgia", serif;
             font-size: 19px;
@@ -143,35 +137,86 @@
             text-align: justify;
         }
 
-        .section-subtitle {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #8C827A;
-            margin: 24px 0 14px;
+        .projects-intro {
+            font-size: 15px;
+            color: #4A4540;
+            margin-bottom: 18px;
         }
 
-        .bullet-list {
+        .writeup-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .writeup-group {
+            border: 1px solid #EAE5E0;
+            border-radius: 16px;
+            padding: 18px;
+            background: #FFFDFB;
+        }
+
+        .writeup-group h3 {
+            font-family: "Playfair Display", "Georgia", serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #59524C;
+            margin-bottom: 14px;
+        }
+
+        .writeup-list {
             list-style: none;
             display: grid;
             gap: 10px;
+            padding: 0;
+            margin: 0;
         }
 
-        .bullet-list li {
-            position: relative;
-            padding-left: 18px;
+        .writeup-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #EFEAE4;
+            border-radius: 12px;
+            padding: 12px 14px;
+            background: #FCFBF9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .writeup-card:hover {
+            transform: translateX(4px);
+            border-color: #D9C3B0;
+            box-shadow: 0 8px 22px rgba(44, 42, 41, 0.08);
+        }
+
+        .writeup-card-title {
+            display: block;
             font-size: 15px;
-            color: #4A4540;
+            font-weight: 600;
+            color: #1A1919;
+            margin-bottom: 3px;
         }
 
-        .bullet-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #C49A83;
+        .writeup-card-meta {
+            display: block;
+            font-size: 12px;
+            color: #8C827A;
+            word-break: break-word;
         }
 
-        /* LISTA DE PROYECTOS (Formato Abel en versión premium) */
+        .writeup-card-badge {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: #EFEAE4;
+            color: #73675C;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
         .project-row {
             display: flex;
             padding: 18px 16px;
@@ -214,7 +259,6 @@
             font-weight: 300;
         }
 
-        /* ETIQUETAS DE TECNOLOGÍA */
         .tags {
             display: flex;
             flex-wrap: wrap;
@@ -223,14 +267,13 @@
 
         .tag {
             font-size: 11px;
-            background-color: #EFEAE4; /* Nude suave */
+            background-color: #EFEAE4;
             color: #73675C;
             padding: 2px 10px;
-            border-radius: 20px; /* Redondeado orgánico */
+            border-radius: 20px;
             letter-spacing: 0.5px;
         }
 
-        /* EDUCACIÓN */
         .edu-item {
             padding: 15px 16px;
             border-left: 2px solid #E3D9D0;
@@ -259,35 +302,39 @@
             padding-bottom: 40px;
         }
 
-        /* ADAPTACIÓN PARA MÓVILES (Oculta el menú si la pantalla es muy pequeña) */
         @media (max-width: 600px) {
             nav {
                 flex-direction: column;
                 gap: 10px;
                 padding: 1rem;
             }
+
             .nav-links {
                 gap: 15px;
             }
+
             main {
                 margin-top: 160px;
             }
+
             .project-row {
                 flex-direction: column;
                 padding: 15px 8px;
             }
+
             .project-date {
                 margin-bottom: 6px;
+            }
+
+            .writeup-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- MENÚ DE NAVEGACIÓN SUPERIOR (Fijo estilo Abel) -->
     <header>
         <nav>
-            <!-- CAMBIA AQUÍ: Tus Iniciales o Inicial + Apellido -->
             <a href="#inicio" class="logo">N. C. Ramos</a>
             <div class="nav-links">
                 <a href="#sobre-mi">Sobre Mí</a>
@@ -299,100 +346,47 @@
     </header>
 
     <main>
-
-        <!-- SECCIÓN DE INICIO / PRESENTACIÓN -->
         <section id="inicio">
-            <!-- CAMBIA AQUÍ: Tu Nombre Real -->
             <h1 class="intro-title">Nerea Candón Ramos</h1>
             <p class="subtitle">Especialista en Ciberseguridad y Desarrollo de Software</p>
-            
             <div class="links-bio">
-                <!-- CAMBIA AQUÍ: Tus enlaces a redes -->
                 <a href="https://github.com/nereaisla14" target="_blank">GitHub</a>
                 <a href="https://linkedin.com/in/nerea-candon-ramos" target="_blank">LinkedIn</a>
                 <a href="mailto:nereacandonramos@gmail.com">Email</a>
             </div>
         </section>
 
-        <!-- SECCIÓN PROYECTOS / WRITE-UPS -->
         <section id="proyectos">
             <h2>Write-ups</h2>
-            <div class="text-block">
-                <p>Accede al README exacto de cada máquina en GitHub. Los enlaces están organizados por Linux y Windows para facilitar la navegación.</p>
-            </div>
+            <p class="projects-intro">Accede al README exacto de cada máquina en GitHub. Los enlaces están organizados por Linux y Windows para facilitar la navegación.</p>
 
-            <div style="margin-top:20px;">
-                <div style="display:flex;gap:20px;flex-wrap:wrap;">
-                    <div style="flex:1;min-width:260px;">
-                        <h3>Máquinas Linux</h3>
-                        <ul id="linux-catalog" class="bullet-list"></ul>
-                    </div>
-                    <div style="flex:1;min-width:260px;">
-                        <h3>Máquinas Windows</h3>
-                        <ul id="windows-catalog" class="bullet-list"></ul>
-                    </div>
+            <div class="writeup-grid">
+                <div class="writeup-group">
+                    <h3>Máquinas Linux</h3>
+                    <ul id="linux-writeups" class="writeup-list"></ul>
+                </div>
+
+                <div class="writeup-group">
+                    <h3>Máquinas Windows</h3>
+                    <ul id="windows-writeups" class="writeup-list"></ul>
                 </div>
             </div>
 
             <div class="text-block" style="margin-top:18px; font-size:13px; color:#8C827A;">
                 <p>Repositorios base: <a href="https://github.com/IES-Rafael-Alberti/Write-up-Nerea" target="_blank">Write-up-Nerea</a> · <a href="https://github.com/IES-Rafael-Alberti/ctfd-challenges" target="_blank">ctfd-challenges</a></p>
             </div>
-
-            <script>
-                (function(){
-                    const WRITEUP_BASE_URL = 'https://github.com/IES-Rafael-Alberti/Write-up-Nerea/blob/main';
-                    // Lista genérica; se puede personalizar con tus máquinas específicas
-                    const WRITEUPS = {
-                        linux: [
-                            'El-Detective',
-                            'Los-archivos-perdidos',
-                            'Dos-caras-distintas'
-                        ],
-                        windows: []
-                    };
-
-                    function buildWriteupUrl(os, machine) {
-                        const folder = os === 'windows' ? 'Maquinas_de_Windows' : 'Maquina_de_Linux';
-                        return `${WRITEUP_BASE_URL}/${folder}/${machine}/README.md`;
-                    }
-
-                    function createWriteupLink(machine, os) {
-                        const li = document.createElement('li');
-                        const a = document.createElement('a');
-                        a.href = buildWriteupUrl(os, machine);
-                        a.target = '_blank';
-                        a.rel = 'noopener noreferrer';
-                        a.textContent = machine.replace(/[-_]/g,' ');
-                        li.appendChild(a);
-                        return li;
-                    }
-
-                    function render() {
-                        const linuxCatalog = document.getElementById('linux-catalog');
-                        const windowsCatalog = document.getElementById('windows-catalog');
-                        linuxCatalog.innerHTML = '';
-                        windowsCatalog.innerHTML = '';
-                        WRITEUPS.linux.forEach(m=> linuxCatalog.appendChild(createWriteupLink(m,'linux')));
-                        WRITEUPS.windows.forEach(m=> windowsCatalog.appendChild(createWriteupLink(m,'windows')));
-                    }
-                    document.addEventListener('DOMContentLoaded', render);
-                })();
-            </script>
         </section>
-        <!-- SECCIÓN SOBRE MÍ -->
+
         <section id="sobre-mi">
             <h2>Sobre Mí</h2>
             <div class="text-block">
-                <!-- CAMBIA AQUÍ: Tu texto de presentación -->
                 Soy Nerea Candón Ramos, especialista en Ciberseguridad y Desarrollo de Software con formación técnica en Desarrollo de Aplicaciones Multiplataforma. Durante mi carrera profesional he adquirido los conocimientos necesarios para afrontar cualquier proyecto software, combinando desarrollo web responsive, análisis de datos y experiencia en seguridad informática. Me interesa continuar mis estudios en Ingeniería Informática, priorizando el aprendizaje práctico y la mejora continua en entornos colaborativos.
             </div>
         </section>
 
-        <!-- SECCIÓN EXPERIENCIA LABORAL -->
         <section id="experiencia">
             <h2>Experiencia Laboral</h2>
 
-            <!-- EXPERIENCIA 1: COFIVE TECHNOLOGY -->
             <div class="project-row">
                 <div class="project-date">2025</div>
                 <div class="project-content">
@@ -406,7 +400,6 @@
                 </div>
             </div>
 
-            <!-- EXPERIENCIA 2: PROYECTO SOCIA - Gestión de Incidentes -->
             <div class="project-row">
                 <div class="project-date">2026</div>
                 <div class="project-content">
@@ -420,7 +413,6 @@
                 </div>
             </div>
 
-            <!-- EXPERIENCIA 3: PROYECTO SOCIA - "Un SOC en tu aula" -->
             <div class="project-row">
                 <div class="project-date">2026</div>
                 <div class="project-content">
@@ -434,7 +426,6 @@
                 </div>
             </div>
 
-            <!-- EXPERIENCIA 4: SecurityHighSchool Córdoba -->
             <div class="project-row">
                 <div class="project-date">2025</div>
                 <div class="project-content">
@@ -447,7 +438,7 @@
                     </div>
                 </div>
             </div>
-            <!-- EXPERIENCIA 7: Concienciación Seguridad Digital -->
+
             <div class="project-row">
                 <div class="project-date">2026</div>
                 <div class="project-content">
@@ -460,13 +451,10 @@
                     </div>
                 </div>
             </div>
-
         </section>
 
-        <!-- SECCIÓN FORMACIÓN -->
         <section id="formacion">
             <h2>Formación & Certificaciones</h2>
-            
             <div class="edu-item">
                 <div class="edu-title">Especialización en Ciberseguridad</div>
                 <div class="edu-meta">IES Rafael Alberti, Cádiz · 2025-2026</div>
@@ -478,12 +466,73 @@
             </div>
         </section>
 
-        <!-- PIE DE PÁGINA -->
         <footer>
             <p>&copy; 2026 — Nerea Candón Ramos | Publicado en GitHub Pages</p>
         </footer>
 
-    </main>
+        <script>
+            const WRITEUP_BASE_URL = 'https://github.com/IES-Rafael-Alberti/Write-up-Nerea/blob/main';
 
+            const WRITEUPS = {
+                linux: [
+                    'Tech_Supp0rt',
+                    'Agent-Sudo',
+                    'easy-peasy',
+                    'basic-pentesting',
+                    'Library',
+                    'RootMe',
+                    'Kenobi-badr',
+                    'Startup',
+                    'GamingServer',
+                    'Bounty-Hacker',
+                    'LazyAdmin',
+                    'Brooklyn99',
+                    'Poster',
+                    'Ignite',
+                    'Wgel-CTF',
+                    'Year-of-the-Rabbit',
+                    'Lian_Yu'
+                ],
+                windows: [
+                    'Anthem',
+                    'Blaster',
+                    'Blue',
+                    'Ice',
+                    'Retro_CTF',
+                    'Revelant'
+                ]
+            };
+
+            function buildWriteupUrl(os, machine) {
+                const folder = os === 'windows' ? 'Maquinas_de_Windows' : 'Maquina_de_Linux';
+                return `${WRITEUP_BASE_URL}/${folder}/${machine}/README.md`;
+            }
+
+            function renderWriteupList(targetId, os) {
+                const target = document.getElementById(targetId);
+                if (!target) return;
+
+                target.innerHTML = WRITEUPS[os].map(machine => {
+                    const folder = os === 'windows' ? 'Maquinas_de_Windows' : 'Maquina_de_Linux';
+                    const url = buildWriteupUrl(os, machine);
+
+                    return `
+                        <li>
+                            <a class="writeup-card" href="${url}" target="_blank" rel="noopener noreferrer">
+                                <span class="writeup-card-title">${machine}</span>
+                                <span class="writeup-card-meta">${folder}/${machine}/README.md</span>
+                                <span class="writeup-card-badge">GitHub</span>
+                            </a>
+                        </li>
+                    `;
+                }).join('');
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                renderWriteupList('linux-writeups', 'linux');
+                renderWriteupList('windows-writeups', 'windows');
+            });
+        </script>
+    </main>
 </body>
 </html>
