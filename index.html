@@ -6,11 +6,14 @@
     <!-- CAMBIA AQUÍ: Tu Nombre -->
     <title>Nerea Candón Ramos — Portafolio Profesional</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth; /* Para que al pulsar el menú baje con suavidad */
         }
 
         body {
@@ -81,6 +84,7 @@
         section {
             padding-top: 40px;
             margin-bottom: 60px;
+            scroll-margin-top: 110px;
         }
 
         /* PRESENTACIÓN */
@@ -287,6 +291,7 @@
             <a href="#inicio" class="logo">N. C. Ramos</a>
             <div class="nav-links">
                 <a href="#sobre-mi">Sobre Mí</a>
+                <a href="#proyectos">Proyectos</a>
                 <a href="#experiencia">Experiencia</a>
                 <a href="#formacion">Formación</a>
             </div>
@@ -309,6 +314,71 @@
             </div>
         </section>
 
+        <!-- SECCIÓN PROYECTOS / WRITE-UPS -->
+        <section id="proyectos">
+            <h2>Write-ups</h2>
+            <div class="text-block">
+                <p>Accede al README exacto de cada máquina en GitHub. Los enlaces están organizados por Linux y Windows para facilitar la navegación.</p>
+            </div>
+
+            <div style="margin-top:20px;">
+                <div style="display:flex;gap:20px;flex-wrap:wrap;">
+                    <div style="flex:1;min-width:260px;">
+                        <h3>Máquinas Linux</h3>
+                        <ul id="linux-catalog" class="bullet-list"></ul>
+                    </div>
+                    <div style="flex:1;min-width:260px;">
+                        <h3>Máquinas Windows</h3>
+                        <ul id="windows-catalog" class="bullet-list"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-block" style="margin-top:18px; font-size:13px; color:#8C827A;">
+                <p>Repositorios base: <a href="https://github.com/IES-Rafael-Alberti/Write-up-Nerea" target="_blank">Write-up-Nerea</a> · <a href="https://github.com/IES-Rafael-Alberti/ctfd-challenges" target="_blank">ctfd-challenges</a></p>
+            </div>
+
+            <script>
+                (function(){
+                    const WRITEUP_BASE_URL = 'https://github.com/IES-Rafael-Alberti/Write-up-Nerea/blob/main';
+                    // Lista genérica; se puede personalizar con tus máquinas específicas
+                    const WRITEUPS = {
+                        linux: [
+                            'El-Detective',
+                            'Los-archivos-perdidos',
+                            'Dos-caras-distintas'
+                        ],
+                        windows: []
+                    };
+
+                    function buildWriteupUrl(os, machine) {
+                        const folder = os === 'windows' ? 'Maquinas_de_Windows' : 'Maquina_de_Linux';
+                        return `${WRITEUP_BASE_URL}/${folder}/${machine}/README.md`;
+                    }
+
+                    function createWriteupLink(machine, os) {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = buildWriteupUrl(os, machine);
+                        a.target = '_blank';
+                        a.rel = 'noopener noreferrer';
+                        a.textContent = machine.replace(/[-_]/g,' ');
+                        li.appendChild(a);
+                        return li;
+                    }
+
+                    function render() {
+                        const linuxCatalog = document.getElementById('linux-catalog');
+                        const windowsCatalog = document.getElementById('windows-catalog');
+                        linuxCatalog.innerHTML = '';
+                        windowsCatalog.innerHTML = '';
+                        WRITEUPS.linux.forEach(m=> linuxCatalog.appendChild(createWriteupLink(m,'linux')));
+                        WRITEUPS.windows.forEach(m=> windowsCatalog.appendChild(createWriteupLink(m,'windows')));
+                    }
+                    document.addEventListener('DOMContentLoaded', render);
+                })();
+            </script>
+        </section>
         <!-- SECCIÓN SOBRE MÍ -->
         <section id="sobre-mi">
             <h2>Sobre Mí</h2>
@@ -318,7 +388,10 @@
             </div>
         </section>
 
-      
+        <!-- SECCIÓN EXPERIENCIA LABORAL -->
+        <section id="experiencia">
+            <h2>Experiencia Laboral</h2>
+
             <!-- EXPERIENCIA 1: COFIVE TECHNOLOGY -->
             <div class="project-row">
                 <div class="project-date">2025</div>
