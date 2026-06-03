@@ -187,11 +187,10 @@ h2{
 .text-block {
     font-size: 1.05rem;
     color: #4a4540;
-    text-align: justify; /* Cambiado a justify para que los bordes queden limpios, o mantén left si lo prefieres */
-    line-height: 1.6;    /* Añade espacio entre líneas para mejor lectura */
-    max-width: 750px;    /* Evita que el texto se estire hasta el infinito */
-    margin: 0 auto;      /* Centra el bloque de texto en la pantalla */
-    padding: 0 20px;     /* Evita que toque los bordes en pantallas móviles */
+    text-align: left;    /* Volvemos a la izquierda para evitar espacios raros entre palabras */
+    line-height: 1.6;    /* Mantiene una lectura cómoda y limpia */
+    max-width: 800px;    /* Limita la extensión del texto para que no sea infinita */
+    margin: 20px 0 0 0;  /* Elimina el centrado. Añade un poco de espacio arriba (20px) y cero a los lados */
 }
 
 /* WRITEUPS */
