@@ -98,10 +98,13 @@ section{
 
 #inicio{
     min-height: 100vh;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 120px 0 40px;
+    padding: 120px 1.5rem 40px;
     background:
         radial-gradient(circle at top right, rgba(196, 154, 131, 0.10), transparent 34%),
         radial-gradient(circle at bottom left, rgba(196, 154, 131, 0.05), transparent 28%),
@@ -182,10 +185,10 @@ h2{
 /* SOBRE MI */
 
 .text-block{
-    font-size: 1rem;
+    font-size: 1.02rem;
     color: #4a4540;
-    text-align: justify;
-    max-width: 75ch;
+    text-align: left;
+    max-width: 88ch;
 }
 
 /* WRITEUPS */
@@ -249,6 +252,58 @@ h2{
     font-size: 0.68rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+.writeups-split{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.writeups-column{
+    min-width: 0;
+}
+
+.writeups-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.writeups-controls{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.writeups-controls button{
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--text);
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.writeups-controls button:hover{
+    background: #f1ebe4;
+    border-color: var(--accent-soft);
+    transform: translateY(-1px);
+}
+
+.writeups-controls button:disabled{
+    opacity: 0.4;
+    cursor: default;
+    transform: none;
+}
+
+@media (max-width: 900px){
+    .writeups-split{
+        grid-template-columns: 1fr;
+    }
 }
 
 /* EXPERIENCIA */
@@ -442,10 +497,12 @@ footer{
     }
 
     #inicio{
-        min-height: auto;
-        padding-top: 150px;
-        padding-bottom: 2rem;
-    }
+    min-height: auto;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 150px 1rem 2rem;
+}
 
     .hero-center h1{
         font-size: clamp(2.8rem, 14vw, 4.8rem);

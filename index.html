@@ -45,15 +45,33 @@
             </div>
         </section>
 
-        <section id="write-ups">
-            <h2>Write-ups</h2>
-            
-            <div class="section-subtitle">Máquinas Linux</div>
-            <ul id="linux-writeups" class="bullet-list" style="margin-bottom:30px;"></ul>
+       <section id="write-ups">
+  <h2>Write-ups</h2>
 
-            <div class="section-subtitle">Máquinas Windows</div>
-            <ul id="windows-writeups" class="bullet-list"></ul>
-        </section>
+  <div class="writeups-split">
+    <div class="writeups-column">
+      <div class="writeups-head">
+        <div class="section-subtitle">Máquinas Linux</div>
+        <div class="writeups-controls">
+          <button type="button" id="linux-prev">←</button>
+          <button type="button" id="linux-next">→</button>
+        </div>
+      </div>
+      <ul id="linux-writeups" class="bullet-list"></ul>
+    </div>
+
+    <div class="writeups-column">
+      <div class="writeups-head">
+        <div class="section-subtitle">Máquinas Windows</div>
+        <div class="writeups-controls">
+          <button type="button" id="windows-prev">←</button>
+          <button type="button" id="windows-next">→</button>
+        </div>
+      </div>
+      <ul id="windows-writeups" class="bullet-list"></ul>
+    </div>
+  </div>
+</section>
         <section id="proyectos" style="display:none;">
             <h2>Proyectos</h2>
         </section>
