@@ -1,5 +1,5 @@
 const WRITEUP_BASE_URL = 'https://github.com/IES-Rafael-Alberti/Write-up-Nerea/blob/main';
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 4;
 
 const WRITEUPS = {
     linux: [
