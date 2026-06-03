@@ -183,7 +183,13 @@ h2{
 }
 
 /* SOBRE MI */
-
+.text-block {
+    text-align: left !important;
+    max-width: 800px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    padding: 0;
+}
 
 /* WRITEUPS */
 
