@@ -484,6 +484,22 @@ main{
             .project-date {
                 margin-bottom: 6px;
             }
+
+            .hero-image {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                background: linear-gradient(270deg, #ff6ec4, #7873f5, #4adede, #ff9a8b);
+                background-size: 800% 800%;
+                animation: gradientMove 8s ease infinite;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+
+@keyframes gradientMove {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
+}
         }
     </style>
 </head>
@@ -509,7 +525,7 @@ main{
     <div class="hero-container">
 
         <div class="hero-image">
-            <img src="img/nerea.jpg" alt="Nerea Candón Ramos">
+            <div class="hero-image" alt="Nerea Candón Ramos">
         </div>
 
         <div class="hero-text">
