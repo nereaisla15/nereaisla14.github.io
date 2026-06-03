@@ -184,14 +184,6 @@ h2{
 
 /* SOBRE MI */
 
-.text-block {
-    font-size: 1.05rem;
-    color: #4a4540;
-    text-align: left;    /* Volvemos a la izquierda para evitar espacios raros entre palabras */
-    line-height: 1.6;    /* Mantiene una lectura cómoda y limpia */
-    max-width: 800px;    /* Limita la extensión del texto para que no sea infinita */
-    margin: 20px 0 0 0;  /* Elimina el centrado. Añade un poco de espacio arriba (20px) y cero a los lados */
-}
 
 /* WRITEUPS */
 
