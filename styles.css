@@ -184,12 +184,14 @@ h2{
 
 /* SOBRE MI */
 
-.text-block{
+.text-block {
     font-size: 1.05rem;
     color: #4a4540;
-    text-align: left;
-    max-width: 100%;
-    margin: 0 auto;
+    text-align: justify; /* Cambiado a justify para que los bordes queden limpios, o mantén left si lo prefieres */
+    line-height: 1.6;    /* Añade espacio entre líneas para mejor lectura */
+    max-width: 750px;    /* Evita que el texto se estire hasta el infinito */
+    margin: 0 auto;      /* Centra el bloque de texto en la pantalla */
+    padding: 0 20px;     /* Evita que toque los bordes en pantallas móviles */
 }
 
 /* WRITEUPS */
